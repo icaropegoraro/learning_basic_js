@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio da inversão</title>
+    <script>
+
+        // Declaração das variáveis
+        var a = 10
+        var b = 20
+        var c = null  // c é uma variável auxiliar
+
+        console.log('a = ' + a)
+        console.log('b = ' + b)
+        console.log('c = ' + c)
+
+        document.write('<p>No começo, os valores das variáveis <strong>a</strong>, <strong>b</strong> e <strong>c</strong> são, respectivamente: <strong>' + a + '</strong>, <strong>' + b + '</strong>, <strong>' + c + '</strong>.</p>')
+
+        // Inversão das variáveis a e b
+        c = a
+        a = b
+        b = c
+        c = null
+
+
+        console.log('a = ' + a)
+        console.log('b = ' + b)
+        console.log('c = ' + c)
+
+        document.write('<p>Após a inversão das variáveis a e b, os valores das variáveis <strong>a</strong>, <strong>b</strong> e <strong>c</strong> são, respectivamente: <strong>' + a + '</strong>, <strong>' + b + '</strong>, <strong>' + c + '</strong>.</p>')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
