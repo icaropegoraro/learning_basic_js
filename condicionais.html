@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de condicionais</title>
+    <script>
+        function escolha1() {
+            let numero = prompt('Digite um número')
+            numero = parseFloat(numero)
+
+            if ((numero > 0)) {
+                console.log("Este número é menor que 0")
+                return
+            }
+
+            if ((numero < 0)) {
+                console.log("Este número é maior que 0")
+                return
+            }   
+            console.log("Este número é igual a 0")
+        }
+
+        function escolha2() {
+            let numero = prompt('Digite um número')
+            numero = parseFloat(numero)
+
+            numero > 0 ? 
+                console.log('Este número é maior que 0')
+
+            : numero < 0 ? 
+                console.log('Este número é menor que 0')
+
+            : console.log('Este número é igual a 0')
+        }
+    </script>
+</head>
+<body>
+    <button onclick = escolha1()>Clica aqui 1</button>
+    <button onclick = escolha2()>Clica aqui 2</button>
+</body>
+</html>
