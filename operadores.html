@@ -5,17 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript</title>
     <script>
-         let condicao1 = true
-         let condicao2 = false
+        let nota = 4
+        let media = 5 // Definida pela escola
+        let condicaoPorMedia = nota >= media
 
-        if (condicao1 || condicao2) {
-            document.write('Caso 1');
+        let aulasDadas = 20 // Definido pela escola
+        let presencaAluno = 14
+        let condicaoPorFalta = presencaAluno >= aulasDadas*0.75
+
+        if (condicaoPorMedia && condicaoPorFalta) {
+            document.write('Você foi aprovado! Parabéns!')
         }
 
-        if (condicao1 && condicao2) {
-            document.write('Caso 2');
+        if (condicaoPorMedia && !condicaoPorFalta) {
+            document.write('Você reprovou. Motivo: muitas faltas')
         }
-</script>
+
+        if (!condicaoPorMedia && condicaoPorFalta) {
+            document.write('Você reprovou. Motivo: nota abaixo da média')
+        }
+
+        if (!condicaoPorMedia && !condicaoPorFalta) {
+            document.write('Você reprovou. Desista!')
+        }
     </script>
 </head>
 <body>
