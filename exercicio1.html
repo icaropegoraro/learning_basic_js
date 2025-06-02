@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício de fixação</title>
+    <script>
+        function consultarFaixaEtaria() {
+            let idade = parseFloat(prompt('Informe sua idade'))
+
+            if (idade >= 0 && idade < 15) {
+                alert('Sua faixa etária é "criança"')
+                return
+            }
+
+            if (idade >= 15 && idade < 30) {
+                alert('Sua faixa etária é "jovem"')
+                return
+            }
+
+            if (idade >= 30 && idade < 60) {
+                alert('Sua faixa etária é "idoso"')
+                return
+            }
+
+            alert('A idade informada é inválida')
+        }
+    </script>
+</head>
+<body>
+    <button onclick = consultarFaixaEtaria() >Clique aqui</button>
+</body>
+</html>
