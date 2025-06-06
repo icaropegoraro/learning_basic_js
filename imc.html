@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar IMC</title>
+    <script>
+        function consultaIMC() {
+            let massa = parseFloat(prompt("Digite sua massa corporal em kilogramas (kg)"))
+            if (isNaN(massa)) {
+                console.log("Insira um valor válido para a massa")
+                return
+            }
+
+            let altura = prompt("Digite sua altura em metros (m)")
+
+            if (isNaN(altura)) {
+                console.log("Insira um valor válido para a altura")
+                return
+            }
+
+            let imc = massa / (altura**2)
+
+            imc = imc.toFixed(2)
+
+            let alertaImc = ''
+
+            if (imc < 16) {
+                alertaImc = 'Baixo peso muito grave'
+            }
+
+            if (imc >= 16 && imc < 17) {
+                alertaImc = 'Baixo peso grave'
+            }
+
+            if (imc >= 17 && imc < 18.5) {
+                alertaImc = 'Baixo peso'
+            }
+
+            if (imc >= 18.50 && imc < 25) {
+                alertaImc = 'Peso normal'
+            }
+
+            if (imc >= 25 && imc < 30) {
+                alertaImc = 'Sobrepeso'
+            }
+
+            if (imc >= 30 && imc < 35) {
+                alertaImc = 'Obesidade grau I'
+            }
+
+            if (imc >= 35 && imc < 40) {
+                alertaImc = 'Obesidade grau II'
+            }
+
+            if (imc >= 40) {
+                alertaImc = 'Obesidade grau III'
+            }
+
+            console.log('Você possui índice de massa corporal igual a ' + imc + ', sendo classificado como "' + alertaImc + '".')
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
