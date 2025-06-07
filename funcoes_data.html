@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções de manipulação de data</title>
+    <script>
+        function getStatusTemporalPedido() {
+            pedido = {
+            "numero_pedido": '4578123',
+            "dta_hora_max_handled_pedido": '2025-05-07T17:54:15.629429-03:00'
+            }
+
+            let dta_hora_atual = new Date()
+
+            let dta_hora_limite = new Date(pedido.dta_hora_max_handled_pedido)
+
+            dta_hora_atual.setHours(0,0,0,0)
+            dta_hora_limite.setHours(0,0,0,0)
+
+            let status = 'Favor consulte o suporte'
+
+            if (dta_hora_limite > dta_hora_atual) {
+                status = 'No prazo'
+                return status
+            }
+            if (dta_hora_limite < dta_hora_atual) {
+                status = 'Atrasado'
+                return status
+            }
+            status = 'Vencendo'
+            return status
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
