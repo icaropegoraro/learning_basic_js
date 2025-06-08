@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script>
+        function calculadora() {
+
+            function solicitarNumeros() {
+                let num1 = parseFloat(prompt('Digite o primeiro número'))
+                let num2 = parseFloat(prompt('Digite o segundo número'))
+                return [num1, num2]
+            }
+
+            let [num1, num2] = solicitarNumeros()
+
+            function solicitarOperacao() {
+                let operacao = prompt('Qual operação? OBS: Digite SOMENTE "soma" ou "subtração" - sem aspas')
+                return operacao
+            }
+
+            let operacao = solicitarOperacao()
+
+            function efetuarCalculo () {
+                
+                if (operacao === 'soma') {
+                    let resultado = (num1 + num2).toFixed(2)
+                    return resultado
+                }
+
+                if (operacao === 'subtração') {
+                    let resultado = (num1 - num2).toFixed(2)
+                    return resultado
+                }
+
+                return 'Sua operação é inválida'
+            }
+
+            let resultado = efetuarCalculo()
+
+            if (resultado === 'Sua operação é inválida') {
+                return 'Sua operação "' + operacao + '" é inválida.'
+            }
+
+            return (`O resultado de sua operação de ${operacao} é ${resultado}.`)
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
