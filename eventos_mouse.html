@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div 
+        style="height: 150px; background-color: aliceblue;"
+        id="botao"
+        onclick="alteraCorDaDiv()"
+        onmouseover="alertaSobreCorDiv()"></div>
+    <script>
+        let contadorClick = 0;
+        let contadorMouseOver = 0
+
+        function alertaSobreCorDiv() {
+            contadorMouseOver++
+            
+            if (contadorMouseOver === 1) {
+                alert('Sabia que ao clicar nessa quadrado, sua cor é alterada?')
+            }
+        }
+
+        function alteraCorDaDiv() {
+            let botao = document.getElementById("botao");
+
+            if ((contadorClick % 2) === 0) {
+                botao.style.backgroundColor = 'darkgray';
+            }
+
+            if ((contadorClick % 2) === 1) {
+                botao.style.backgroundColor = 'lightblue';
+            }
+            
+            contadorClick++;
+        }
+    </script>
+</body>
+</html>
