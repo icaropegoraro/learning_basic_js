@@ -9,9 +9,9 @@
     <input type="text" id="cpf" maxlength="14" placeholder="___.___.___-__">
 
     <script>
-        const cpfInput = document.getElementById('cpf')
+        const inputDoCPF = document.getElementById('cpf')
 
-        cpfInput.addEventListener('input', function () {
+        inputDoCPF.addEventListener('input', function () {
             let cpf = cpfInput.value.replace(/\D/g, '')
 
             if (cpf.length > 11) cpf = cpf.slice(0, 11)
@@ -19,18 +19,13 @@
             let cpfMasked = '';
 
             if (cpf.length > 0) cpfMasked = cpf.slice(0, 3)
-
             if (cpf.length > 3) cpfMasked += '.' + cpf.slice(3, 6)
-
             if (cpf.length > 6) cpfMasked += '.' + cpf.slice(6, 9)
-
             if (cpf.length > 9) cpfMasked += '-' + cpf.slice(9, 11)
             
-            cpfInput.value = cpfMasked;
+            inputDoCPF.value = cpfMasked
 
-            if (cpf.length === 11) {
-                cpf = parseInt(cpf)
-            }
+            if (cpf.length === 11) cpf = parseInt(cpf)
 
         })
     </script>
