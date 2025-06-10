@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <label for="rg">RG</label>
+    <input type="text" id="rg" placeholder="__.___.___-_">
+    <br>
+    <br>
+    <label for="telefone">Telefone</label>
+    <input type="text" id="telefone" placeholder="+__ (__) _____-____">
+    <script>
+        let inputTelefone = document.getElementById('telefone');
+
+        let contadorConsoleTelefone = 0
+        let contadorConsoleRG = 0
+        let telefone = ''
+
+        inputTelefone.addEventListener('input', () => {
+            telefone = inputTelefone.value.replace(/\D/g, '');
+
+            let telefoneMasked = '';
+
+            if (telefone.length > 13) telefone = telefone.slice(0,13)
+
+            if (telefone.length > 0) telefoneMasked = '+' + telefone.slice(0,2)
+            if (telefone.length > 2) telefoneMasked += ' (' + telefone.slice(2,4)
+            if (telefone.length > 4) telefoneMasked += ') ' + telefone.slice(4,8)
+            if (telefone.length > 8) telefoneMasked += '-' + telefone.slice(8,12)
+            if (telefone.length > 12) telefoneMasked = `+${telefone.slice(0,2)} (${telefone.slice(2,4)}) ${telefone.slice(4,9)}-${telefone.slice(9,13)}`
+
+            inputTelefone.value = telefoneMasked
+
+        })
+
+        inputTelefone.addEventListener('blur', () => {
+            if (telefone.length == 12 || telefone.length == 13) {
+                telefone = parseInt(telefone)
+                if (contadorConsoleTelefone == 0) console.log(telefone); contadorConsoleTelefone++
+                             
+            }
+        })
+        
+        let inputRG = document.getElementById('rg');
+
+        inputRG.addEventListener('input', () => {
+            let rg = inputRG.value.replace(/\D/g, '');
+
+            let rgMasked = ''; // XX.XXX.XXX-X
+
+            if (rg.length > 9) rg = rg.slice (0,9);
+
+            if (rg.length> 0) rgMasked += rg.slice(0,2);
+            if (rg.length > 2) rgMasked += '.' + rg.slice(2,5);
+            if (rg.length > 5) rgMasked += '.' + rg.slice(5,8);
+            if (rg.length > 8) rgMasked += '-' + rg.slice(8,9);
+            
+            inputRG.value = rgMasked;
+
+            if (rg.length == 9) {
+                rg = parseInt(rg)
+                if (contadorConsoleRG == 0) console.log(rg); contadorConsoleRG++
+                             
+            }
+    });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
