@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo DOM</title>
+</head>
+<body>
+    <input 
+        type="text"
+        id="caracter"
+        oninput="isNumberOrLetter()"
+    >
+    <br>
+    <hr>
+    <input 
+        type="text"
+        id="letra"
+        disabled
+    >
+    <input 
+        type="text"
+        id="numero"
+        disabled
+    >
+    <script>
+        let inputCaracter = document.getElementById('caracter')
+        let inputNumero = document.getElementById('numero')
+        let inputLetra = document.getElementById('letra')
+        function isNumberOrLetter() {
+            if (!isNaN(Number(inputCaracter.value))) {
+                inputNumero.value += inputCaracter.value
+            }
+
+            if (/[a-zA-Z]/.test(inputCaracter.value)) {
+                inputLetra.value += inputCaracter.value
+            }
+            inputCaracter.value = ''
+        }
+    </script>
+</body>
+</html>
